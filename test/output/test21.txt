@@ -124,8 +124,11 @@ r.Right
 NUMBER
 2
 
-UNKNOWN
-).
+PUNCTUATION
+)
+
+END-PUNCTUATION
+.
 
 WORD
 Đạo

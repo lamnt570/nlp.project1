@@ -22,14 +22,8 @@ chuột
 WORD
 của
 
-WORD
-VooDoo
-
-NUMBER
-3
-
-WORD
-x
+WORD with NUMBER
+VooDoo3x
 
 WORD
 Còn

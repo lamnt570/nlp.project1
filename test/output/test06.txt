@@ -16,14 +16,8 @@ vào
 WORD
 lúc
 
-NUMBER
-19
-
-WORD
-h
-
-NUMBER
-00
+WORD with NUMBER
+19h00
 
 PUNCTUATION
 (
@@ -127,11 +121,8 @@ Trường
 PUNCTUATION
 ...
 
-WORD
-U
-
-NUMBER
-19
+WORD with NUMBER
+U19
 
 WORD
 Việt
@@ -172,11 +163,8 @@ vào
 WORD
 giải
 
-WORD
-U
-
-NUMBER
-19
+WORD with NUMBER
+U19
 
 WORD
 Đông

@@ -19,7 +19,7 @@ túc
 WORD
 Huế
 
-WORD
+UNKNOWN
 -
 
 WORD
@@ -28,7 +28,7 @@ WORD
 WORD
 Nẵng
 
-WORD
+UNKNOWN
 -
 
 WORD
@@ -88,11 +88,8 @@ Nẵng
 WORD
 khoảng
 
-NUMBER
-7
-
-NUMBER
--8
+WORD with NUMBER
+7-8
 
 WORD
 ngày

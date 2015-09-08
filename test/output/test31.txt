@@ -41,13 +41,7 @@ WORD
 hastag
 
 UNKNOWN
-#WeAre
-
-NUMBER
-6
-
-WORD
-S
+#WeAre6S
 
 PUNCTUATION
 ,
@@ -106,6 +100,9 @@ công
 WORD
 ty
 
-UNKNOWN
-".
+PUNCTUATION
+"
+
+END-PUNCTUATION
+.
 

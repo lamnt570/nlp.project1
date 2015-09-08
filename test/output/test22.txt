@@ -16,7 +16,7 @@ Rock
 PUNCTUATION
 "
 
-WORD
+UNKNOWN
 -
 
 WORD

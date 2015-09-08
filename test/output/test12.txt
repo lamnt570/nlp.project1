@@ -1,8 +1,5 @@
-WORD
-U
-
-NUMBER
-19
+WORD with NUMBER
+U19
 
 WORD
 Việt
@@ -10,17 +7,11 @@ Việt
 WORD
 Nam
 
-NUMBER
-0
+WORD with NUMBER
+0-6
 
-NUMBER
--6
-
-WORD
-U
-
-NUMBER
-19
+WORD with NUMBER
+U19
 
 WORD
 Thái

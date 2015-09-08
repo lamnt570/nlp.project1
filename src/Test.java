@@ -20,15 +20,18 @@ public class Test {
 //			builder.append(t.getBegin() + " " + t.getEnd() + "\n);
 			String type = null;
 			switch (t.getType()) {
-			case Token.TOKEN_TYPE_DATE: type = "DATE"; break;
-			case Token.TOKEN_TYPE_EMAIL: type = "EMAIL"; break;
-			case Token.TOKEN_TYPE_MONEY: type = "MONEY"; break;
-			case Token.TOKEN_TYPE_NUMBER: type = "NUMBER"; break;
-			case Token.TOKEN_TYPE_TIME: type = "TIME"; break;
-			case Token.TOKEN_TYPE_URL: type = "URL"; break;
-			case Token.TOKEN_TYPE_WORD: type = "WORD"; break;
-			case Token.TOKEN_TYPE_PUNC: type = "PUNCTUATION"; break;
-			case Token.TOKEN_TYPE_END_PUNC: type = "END-PUNCTUATION"; break;
+			case Token.TOKEN_TYPE_EMAIL		: type = "EMAIL"; break;
+			case Token.TOKEN_TYPE_URL		: type = "URL"; break;
+			case Token.TOKEN_TYPE_MONEY		: type = "MONEY"; break;
+			case Token.TOKEN_TYPE_PERCENTAGE: type = "PERCENTAGE"; break;
+			case Token.TOKEN_TYPE_DATE		: type = "DATE"; break;
+			case Token.TOKEN_TYPE_TIME		: type = "TIME"; break;
+			case Token.TOKEN_TYPE_PHONE		: type = "PHONE"; break;
+			case Token.TOKEN_TYPE_NUMBER	: type = "NUMBER"; break;
+			case Token.TOKEN_TYPE_WORD		: type = "WORD"; break;
+			case Token.TOKEN_TYPE_WORD_NUM	: type = "WORD with NUMBER"; break;
+			case Token.TOKEN_TYPE_PUNC		: type = "PUNCTUATION"; break;
+			case Token.TOKEN_TYPE_END_PUNC	: type = "END-PUNCTUATION"; break;
 			default:
 				type = "UNKNOWN";
 			}
@@ -65,15 +68,15 @@ public class Test {
 				System.out.println("ERROR\n");
 			}
 		}
+
 		
-////		String text = "my gmail is ntlam.94@gmail.com from mail.google.com. this is my vnu email lamnt_570@vnu.edu.vn byebye! haha 1.000 list:  danh-sách: item 1, item 2, item 3... aaa .    0.5$ 100,000,000₫ ¥10.0";
-//		String text = readTextFile("test/input/test08.txt");
+//		String text = "my gmail is ntlam.94@gmail.com from mail.google.com. this is my vnu email lamnt_570@vnu.edu.vn byebye! haha 1.000 list:  danh-sách: item 1, item 2, item 3... aaa .    0.5$ 100,000,000₫ ¥10.0";
+//		String text = readTextFile("test/input/test46.txt");
 //		
 //		Tokenizer tokenizer = new Tokenizer(text);
 //		
 //		List<Token> tokens = tokenizer.tokenize();
 //		for (Token t: tokens){
-////			System.out.println(t.getBegin() + " " + t.getEnd());
 //			switch (t.getType()) {
 //			case Token.TOKEN_TYPE_DATE:
 //				System.out.println("DATE"); break;
@@ -81,6 +84,8 @@ public class Test {
 //				System.out.println("EMAIL"); break;
 //			case Token.TOKEN_TYPE_MONEY:
 //				System.out.println("MONEY"); break;
+//			case Token.TOKEN_TYPE_PERCENTAGE:
+//				System.out.println("PERCENTAGE"); break;
 //			case Token.TOKEN_TYPE_NUMBER:
 //				System.out.println("NUMBER"); break;
 //			case Token.TOKEN_TYPE_TIME:
@@ -89,6 +94,8 @@ public class Test {
 //				System.out.println("URL"); break;
 //			case Token.TOKEN_TYPE_WORD:
 //				System.out.println("WORD"); break;
+//			case Token.TOKEN_TYPE_WORD_NUM:
+//				System.out.println("WORD with NUMBER"); break;
 //			case Token.TOKEN_TYPE_PUNC:
 //				System.out.println("PUNCTUATION"); break;
 //			case Token.TOKEN_TYPE_END_PUNC:

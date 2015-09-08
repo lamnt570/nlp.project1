@@ -52,8 +52,11 @@ cân
 WORD
 rưỡi
 
-UNKNOWN
-",
+PUNCTUATION
+"
+
+PUNCTUATION
+,
 
 WORD
 một
@@ -136,11 +139,8 @@ dài
 WORD
 gần
 
-NUMBER
-2
-
-WORD
-m
+WORD with NUMBER
+2m
 
 PUNCTUATION
 ,
@@ -148,11 +148,14 @@ PUNCTUATION
 WORD
 nặng
 
-NUMBER
-1,8
+WORD with NUMBER
+1
 
-WORD
-kg
+PUNCTUATION
+,
+
+WORD with NUMBER
+8kg
 
 WORD
 được

@@ -65,7 +65,7 @@ public class Tokenizer {
 		for (int i = 0; i < insertPos.length; i++)
 			text.insert(i + insertPos[i], ' ');
 		
-		List<Token> tokens = findToken("\\S+", Token.TOKEN_TYPE_UNKNOWN);
+		List<Token> tokens = findToken("\\S+", Token.TOKEN_TYPE_UNKNOWN, false);
 		for (Token token: tokens){
 			// check token type
 			String s = text.substring(token.getBegin(), token.getEnd());
@@ -84,8 +84,10 @@ public class Tokenizer {
 	}
 
 	private int checkTokenType(String s) {
-		if (isWord(s))
+		if (s.matches(Regex.WORD_REGEX))
 			return Token.TOKEN_TYPE_WORD;
+		if (s.matches(Regex.WORD_WITH_NUMBER_REGEX))
+			return Token.TOKEN_TYPE_WORD_NUM;
 		if (s.matches(Regex.PUNCTUATION_REGEX)){
 			if (s.matches(Regex.END_PUNCTUATION_REGEX))
 				return Token.TOKEN_TYPE_END_PUNC;
@@ -93,15 +95,6 @@ public class Tokenizer {
 				return Token.TOKEN_TYPE_PUNC;
 		}
 		return Token.TOKEN_TYPE_UNKNOWN;
-	}
-
-	private boolean isWord(String s) {
-		for (int i = 0; i < s.length(); i++){
-			char ch = s.charAt(i);
-			if (!Character.isLetter(ch) && ch != '-')
-				return false;
-		}
-		return true;
 	}
 
 	private Integer[] findInsertSpacePosition() {
@@ -112,14 +105,31 @@ public class Tokenizer {
 		Pattern p1 = Pattern.compile(Regex.PUNCTUATION_THEN_WORD_REGEX);
 		Matcher m1 = p1.matcher(text);
 		while (m1.find()){
-			insertPos.add(m1.start() + m1.group(1).length());
+			int pos = m1.start() + m1.group(1).length();
+			if (!insertPos.contains(pos))
+				insertPos.add(pos);
 		}
 		
 		// case 2: word then punctuation	eg.: end-of-sentence. item1, item2...
 		Pattern p2 = Pattern.compile(Regex.WORD_THEN_PUNCTUATION_REGEX);
 		Matcher m2 = p2.matcher(text);
 		while (m2.find()){
-			insertPos.add(m2.end() - m2.group(1).length());
+			int pos = m2.end() - m2.group(1).length();
+			if (!insertPos.contains(pos))
+				insertPos.add(pos);
+		}
+		
+		// case 3: sequence of punctuation	eg.: "quote".
+		Pattern p3 = Pattern.compile(Regex.PUNC_SEQUENCE_REGEX);
+		Matcher m3 = p3.matcher(text);
+		while (m3.find()){
+			Pattern p31 = Pattern.compile(Regex.PUNCTUATION_REGEX);
+			Matcher m31 = p31.matcher(m3.group());
+			while (m31.find()){
+				int pos = m3.start() + m31.end();
+				if (!insertPos.contains(pos))
+					insertPos.add(pos);
+			}
 		}
 		
 		insertPos.sort(new Comparator<Integer>() {
@@ -137,16 +147,18 @@ public class Tokenizer {
 	private List<Token> findAndRemoveSpecialToken() {
 		List<Token> res = new ArrayList<>();
 		
-		res.addAll(findAndRemoveToken(Regex.EMAIL_REGEX, Token.TOKEN_TYPE_EMAIL));
-		res.addAll(findAndRemoveToken(Regex.URL_REGEX, Token.TOKEN_TYPE_URL));
-		res.addAll(findAndRemoveToken(Regex.MONEY_REGEX, Token.TOKEN_TYPE_MONEY));
-		res.addAll(findAndRemoveToken(Regex.NUMBER_REGEX, Token.TOKEN_TYPE_NUMBER));
+		res.addAll(findAndRemoveToken(Regex.EMAIL_REGEX, Token.TOKEN_TYPE_EMAIL, false));
+		res.addAll(findAndRemoveToken(Regex.URL_REGEX, Token.TOKEN_TYPE_URL, false));
+		res.addAll(findAndRemoveToken(Regex.MONEY_REGEX, Token.TOKEN_TYPE_MONEY, false));
+		res.addAll(findAndRemoveToken(Regex.PERCENTAGE_REGEX, Token.TOKEN_TYPE_PERCENTAGE, false));
+//		res.addAll(findAndRemoveToken(Regex.PHONE_REGEX, Token.TOKEN_TYPE_PHONE, false));
+		res.addAll(findAndRemoveToken(Regex.NUMBER_REGEX, Token.TOKEN_TYPE_NUMBER, true));
 		
 		return res;
 	}
 
-	private List<Token> findAndRemoveToken(String regex, int tokenType) {
-		List<Token> tokens = findToken(regex, tokenType);
+	private List<Token> findAndRemoveToken(String regex, int tokenType, boolean standAlone) {
+		List<Token> tokens = findToken(regex, tokenType, standAlone);
 		removeToken(tokens);
 		return tokens;
 	}
@@ -162,7 +174,7 @@ public class Tokenizer {
 		}
 	}
 
-	private List<Token> findToken(String regex, int tokenType) {
+	private List<Token> findToken(String regex, int tokenType, boolean standAlone) {
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(text);
 
@@ -172,11 +184,26 @@ public class Tokenizer {
 			int begin = m.start();
 			int end = m.end();
 
+			if (standAlone)
+				if (!checkStandAlone(begin, end))
+					continue;
+			
 			// add the token to result list
 			res.add(new Token(begin, end, tokenType));
 		}
 
 		return res;
+	}
+
+	private boolean checkStandAlone(int begin, int end) {
+		String regex = "[\\w\\p{L}-–]";
+		if (begin > 0)
+			if (text.substring(begin - 1, begin).matches(regex))
+				return false;
+		if (end < text.length() - 1)
+			if (text.substring(end, end + 1).matches(regex))
+				return false;
+		return true;
 	}
 
 	public List<Token> getExtractedToken() {

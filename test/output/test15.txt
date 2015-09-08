@@ -1,5 +1,8 @@
-UNKNOWN
-“Tôi
+PUNCTUATION
+“
+
+WORD
+Tôi
 
 WORD
 rất
@@ -64,8 +67,14 @@ ngôi
 WORD
 vô
 
-UNKNOWN
-địch”,
+WORD
+địch
+
+PUNCTUATION
+”
+
+PUNCTUATION
+,
 
 WORD
 ông
@@ -106,8 +115,11 @@ thiếu
 WORD
 nhi
 
-UNKNOWN
-“Thách
+PUNCTUATION
+“
+
+WORD
+Thách
 
 WORD
 thức
@@ -115,8 +127,11 @@ thức
 WORD
 Lotteria
 
-UNKNOWN
-Cup”
+WORD
+Cup
+
+PUNCTUATION
+”
 
 WORD
 mà

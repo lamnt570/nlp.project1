@@ -22,11 +22,8 @@ cao
 WORD
 hơn
 
-NUMBER
-90
-
-WORD
-cm
+WORD with NUMBER
+90cm
 
 WORD
 và
@@ -34,11 +31,8 @@ và
 WORD
 nặng
 
-NUMBER
-17
-
-WORD
-kg
+WORD with NUMBER
+17kg
 
 PUNCTUATION
 ,

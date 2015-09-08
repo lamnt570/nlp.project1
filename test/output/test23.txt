@@ -46,13 +46,19 @@ Loạt
 WORD
 phim
 
-UNKNOWN
-“The
-
-UNKNOWN
-Transporter”
+PUNCTUATION
+“
 
 WORD
+The
+
+WORD
+Transporter
+
+PUNCTUATION
+”
+
+UNKNOWN
 -
 
 WORD
@@ -82,7 +88,7 @@ Jason
 WORD
 Statham
 
-WORD
+UNKNOWN
 -
 
 WORD

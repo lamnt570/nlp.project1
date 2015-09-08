@@ -67,11 +67,8 @@ là
 WORD
 LG
 
-WORD
-G
-
-NUMBER
-4
+WORD with NUMBER
+G4
 
 WORD
 Note
@@ -133,11 +130,8 @@ biến
 WORD
 của
 
-WORD
-G
-
-NUMBER
-4
+WORD with NUMBER
+G4
 
 WORD
 Note

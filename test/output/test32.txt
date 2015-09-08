@@ -46,11 +46,8 @@ WORD
 WORD
 dang
 
-WORD
-mp
-
-NUMBER
-4
+WORD with NUMBER
+mp4
 
 PUNCTUATION
 ,

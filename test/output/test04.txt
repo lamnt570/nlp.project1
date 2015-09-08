@@ -10,11 +10,8 @@ chủ
 WORD
 nhà
 
-WORD
-U
-
-NUMBER
-19
+WORD with NUMBER
+U19
 
 WORD
 Lào
@@ -28,11 +25,8 @@ tỷ
 WORD
 số
 
-NUMBER
-4
-
-NUMBER
--0
+WORD with NUMBER
+4-0
 
 WORD
 tại
@@ -88,11 +82,8 @@ cùng
 WORD
 giải
 
-WORD
-U
-
-NUMBER
-19
+WORD with NUMBER
+U19
 
 WORD
 Đông

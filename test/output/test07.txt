@@ -4,7 +4,7 @@ Jorge
 WORD
 Mendes
 
-WORD
+UNKNOWN
 -
 
 WORD
@@ -49,8 +49,11 @@ WORD
 WORD
 hè
 
-UNKNOWN
-",
+PUNCTUATION
+"
+
+PUNCTUATION
+,
 
 WORD
 Martial

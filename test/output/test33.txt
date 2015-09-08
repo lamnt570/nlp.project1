@@ -19,11 +19,8 @@ PUNCTUATION
 WORD
 One
 
-WORD
-E
-
-NUMBER
-9
+WORD with NUMBER
+E9
 
 WORD
 mang

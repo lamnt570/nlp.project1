@@ -13,11 +13,8 @@ số
 PUNCTUATION
 ,
 
-WORD
-Z
-
-NUMBER
-5
+WORD with NUMBER
+Z5
 
 WORD
 Premium
@@ -46,11 +43,8 @@ phân
 WORD
 giải
 
-NUMBER
-4
-
-WORD
-K
+WORD with NUMBER
+4K
 
 WORD
 pixel

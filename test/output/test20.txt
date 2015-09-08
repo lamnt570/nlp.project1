@@ -103,7 +103,7 @@ lịch
 WORD
 sử
 
-WORD
+UNKNOWN
 -
 
 PUNCTUATION
@@ -121,7 +121,7 @@ Girl
 PUNCTUATION
 "
 
-WORD
+UNKNOWN
 -
 
 WORD
@@ -175,8 +175,11 @@ xem
 WORD
 trailer
 
-UNKNOWN
-):
+PUNCTUATION
+)
+
+PUNCTUATION
+:
 
 WORD
 Trailer

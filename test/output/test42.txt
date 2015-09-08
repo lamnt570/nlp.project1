@@ -85,11 +85,8 @@ tạc
 WORD
 cơ
 
-WORD
-B
-
-NUMBER
--2
+WORD with NUMBER
+B-2
 
 WORD
 do
@@ -139,20 +136,14 @@ Martin
 WORD
 như
 
-WORD
-F
-
-NUMBER
--22
+WORD with NUMBER
+F-22
 
 WORD
 hay
 
-WORD
-F
-
-NUMBER
--35
+WORD with NUMBER
+F-35
 
 PUNCTUATION
 ,

@@ -37,11 +37,8 @@ tích
 NUMBER
 20.000
 
-WORD
-m
-
-NUMBER
-2
+WORD with NUMBER
+m2
 
 PUNCTUATION
 ,

@@ -52,11 +52,8 @@ model
 WORD
 Xperia
 
-WORD
-Z
-
-NUMBER
-5
+WORD with NUMBER
+Z5
 
 WORD
 đều
@@ -82,11 +79,8 @@ tiêu
 WORD
 chuẩn
 
-WORD
-IP
-
-NUMBER
-68
+WORD with NUMBER
+IP68
 
 PUNCTUATION
 ,

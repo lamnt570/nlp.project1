@@ -100,8 +100,11 @@ WORD
 WORD
 sắt
 
-UNKNOWN
-);
+PUNCTUATION
+)
+
+PUNCTUATION
+;
 
 WORD
 vạch
